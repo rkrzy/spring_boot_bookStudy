@@ -241,3 +241,44 @@ static double getIntegerValue(Object o){
 <li>라우터 : HTTP 요청과 메서드를 연결하는 장치</li>
 </ol>
 </details>
+
+<details>
+<summary>3장 : 스프링 부트 3 구조 이해하기</summary>
+
+### 스프링 부트 3 구조 살펴보기
+<ol>
+<li>프레젠테이션 계층 - 컨트롤러 : HTTP 요청을 받고 비즈니스 계층으로 전송하는 역할을 한다.</li>
+<li>비즈니스 계층 - 서비스 : 모든 비즈니스 로직을 처리한다.</li>
+<li>퍼시스턴스 계층 - 리포지터리 : 이 과정에서 데이터베이스에 접근하는 DAO객체를 사용한다. DAO는 데이터베이스 계층과 상호작용하기 위한 객체다.</li>
+</ol>
+<hr>
+<ol>
+<li>application.yml : 스프링 부트 서버가 실행되면 자동으로 로딩되는 파일. -> 파일을 작성할 때 들여쓰기로 계층 구조를 표현한다. (YAML)</li>
+<li>build.grable
+<ul>
+<li>implementation : 프로젝트 코드가 컴파일 시점과 런타임에 모두 해당 라이브러리를 필요로 할때 사용</li>
+<li>testImplementation : 프로젝트의 테스트 코드를 컴파일하고 실행할 때만 필요한 의존성을 설정, 테스트 코드에서만 사용, 메인 애플리케이션 코드에서는 사용 안함</li>
+<li>runtimeOnly : 런타임에만 필요한 의존성을 지정, 컴파일 시에는 필요하지 않지만, 애플리케이션을 실행할 때 필요한 라이브러리 설정</li>
+<li>compileOnly : 컴파일 시에만 필요, 런타임에는 포함되지 않아야 하는 의존성 지정</li>
+<li>annotationProcessor : 컴파일 시에 애너테이션을 처리할 때 사용하는 도구의 의존성 지정</li>
+</ul>
+</li>
+</ol>
+
+<hr>
+만약 실행이 되었을 때 Controller -> service -> repository순으로 실행된다.
+
+### /test요청을 했을 때 흐름도
+<ol>
+<li>요청이 먼저 들어온다.</li>
+<li>스프링 부트의 디스패처 서블릿이라는 녀석이 URL을 분석한다.</li>
+<li>컨트롤러에 들어있는 메서드와 매칭이 되고 실행된다.</li>
+<li>서비스 계층으로 넘어가서 로직을 수행한후 반환한 값을 JSON, XML 등 다양한 형태로 반환해준다.</li>
+</ol>
+
+</details>
+
+## 유용한 페이지
+<ul>
+<li><a href = "https://www.diffchecker.com/">디프체커 </a>: 코드 서로 다른부분이 어떤건지 비교하기</li>
+</ul>
