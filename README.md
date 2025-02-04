@@ -278,6 +278,73 @@ static double getIntegerValue(Object o){
 
 </details>
 
+
+
+
+
+<details>
+<summary>4장 : 스프링 부트 3와 테스트</summary>
+
+### Given-When-Then구조
+<ul>
+<li>Given : 테스트 실행을 준비하는 단계</li>
+<li>When : 테스트를 진행하는 단계</li>
+<li>Then : 테스트 결과를 검증하는 단계</li>
+</ul>
+
+### JUnit란??
+<ul>
+<li>자바 언어를 위한 단위 테스트 프레임워크다.</li>
+<li>단위 테스트 : 작성한 코드가 의도대로 작동하는지 작은 단위로 검증하는 것</li>
+<li>특징</li>
+<ol>
+<li>@Test 애너테이션으로 메서드를 호출할 때마다 새 인스턴스를 생성, 독립 테스트 가능</li>
+<li>예상 결과를 검증하는 어선셜 메서드 제공</li>
+<li>사용 방법이 단순, 테스트 코드 작성 시간이 적음</li>
+<li>자동 실행, 자체 결과를 확인하고 즉각적인 피드백을 제공</li>
+</ol>
+<li>관련된 애너테이션</li>
+<ul>
+<li>@BeforeAll : 전체 테스트를 시작하기 전에 1회실행해서 메서드는 static으로 선언해야 한다.</li>
+
+```java
+@BeforeAll// 전체 테스트를 시작하기 전에 1회 실행한다.
+static void beforeAll(){
+  System.out.println("@BeforeAll");
+}
+```
+
+<li>@BeforeEach : 테스트 케이스를 시작하기 전마다 실행</li>
+
+```java
+@BeforeEach//테스트 케이스를 시작하기 전마다 실행한다.
+public void beforeEach(){
+    System.out.println("@BeforeEach");
+}
+```
+<li>@AfterAll : 전체 테스트를 마치고 종료하기 전에 1회 실행하므로 메서드는 static으로 선언</li>
+
+```java
+@AfterAll
+static void afterAll(){
+    System.out.println("@AfterAll");
+}
+```
+<li>@AfterEach : 테스트 케이스를 종료하기 전마다 실행</li>
+
+```java
+@AfterEach
+public void afterEach(){
+    System.out.println("@AfterEach");
+}
+```
+</ul>
+<li>AssertJ를 이용해서 비교하는게 가능하다.</li>
+</ul>
+
+</details>
+
+
 ## 유용한 페이지
 <ul>
 <li><a href = "https://www.diffchecker.com/">디프체커 </a>: 코드 서로 다른부분이 어떤건지 비교하기</li>
