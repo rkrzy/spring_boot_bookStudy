@@ -427,6 +427,30 @@ public void afterEach(){
 
 </details>
 
+<details>
+<summary>6장 : 블로그 기획하고 API 만들기</summary>
+<ul>
+<li>REST API : URL의 설계 방식을 이야기 한다.</li>
+<li>REST API를 사용하는 방법
+<ul>
+<li>URL에는 동사를 쓰지 말고, 자원을 표시해야 한다.
+<ul>
+<li>get-student?student_id=1 (X) </li>
+<li>students/1 (O) </li>
+</ul>
+</li>
+<li>동사는 HTTP 메서드로</li>
+</ul></li>
+<li>@Builder를 이용해서 생성자를 만들면 객체를 유연하고 직관적으로 생성하는게 가능하다.</li>
+<li>DTO : 계층끼르 데이터를 교환하기 위해 사용하는 객체</li>
+<li>@RequiredArgsConstructor : final키워드나 @NotNull이 붙은 필드로 생성자를 만들어준다.</li>
+<li>@BlogRespository는 JpaRepository를 상속받는다. 이때 JpaRepository는 CrudRepostory를 상속받고 있다.</li>
+<li>직렬화 : 자바 시스템 내부에서 사용되는 객체를 외부에서 사용하도록 데이터를 변환하는 작업</li>
+<li>역직렬화 : 직렬화의 반대다.</li>
+</ul>
+
+</details>
+
 ## 유용한 페이지
 <ul>
 <li><a href = "https://www.diffchecker.com/">디프체커 </a>: 코드 서로 다른부분이 어떤건지 비교하기</li>

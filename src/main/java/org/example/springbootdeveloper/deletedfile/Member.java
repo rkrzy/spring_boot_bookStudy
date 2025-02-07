@@ -1,4 +1,4 @@
-package org.example.springbootdeveloper;
+package org.example.springbootdeveloper.deletedfile;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,13 +1,10 @@
-package org.example.springbootdeveloper;
+package org.example.springbootdeveloper.deletedfile;
 
-import org.hibernate.annotations.processing.SQL;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,14 +21,14 @@ class MemberRepositoryTest {
     void cleanUp(){
         memberRepository.deleteAll();
     }
-    @Sql("/insert-members.sql")
+    @Sql("/deletedfiel/insert-members.sql")
     @Test
     void getAllMembers(){
         List<Member> members = memberRepository.findAll();
 
         assertThat(members.size()).isEqualTo(3);
     }
-    @Sql("/insert-members.sql")
+    @Sql("/deletedfiel/insert-members.sql")
     @Test
     void getMemberByName(){
 
@@ -56,7 +53,7 @@ class MemberRepositoryTest {
 
         assertThat(memberRepository.findAll().size()).isEqualTo(2);
     }
-    @Sql("/insert-members.sql")
+    @Sql("/deletedfiel/insert-members.sql")
     @Test
     void deleteMemberById(){
 
@@ -64,7 +61,7 @@ class MemberRepositoryTest {
 
         assertThat(memberRepository.findById(2L).isEmpty()).isTrue();
     }
-    @Sql("/insert-members.sql")
+    @Sql("/deletedfiel/insert-members.sql")
     @Test
     void deleteAll() {
 
@@ -72,7 +69,7 @@ class MemberRepositoryTest {
 
         assertThat(memberRepository.findAll().size()).isZero();
     }
-    @Sql("/insert-members.sql")
+    @Sql("/deletedfiel/insert-members.sql")
     @Test
     void update(){
 
