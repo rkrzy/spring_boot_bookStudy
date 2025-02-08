@@ -451,6 +451,40 @@ public void afterEach(){
 
 </details>
 
+<details>
+<summary>7장 : 블로그 화면 구성하기</summary>
+<ul>
+<li>타임리프 : Java기반의 템플릿 엔진으로, 스프링 서버에서 데이터를 웹페이지 넣어주는 도구.</li>
+<li>@EntityListeners(AuditingEntityListener.class)를 사용하면 엔티티의 생성 및 수정 시간을 자동으로 감시하고 기록이 가능하다.
+<ul>
+<li>@CreatedDate</li>
+<li>@LastModifiedDate</li>
+<li>메인 클래스에는@EnableJpaAuditing를 추가해주면 된다.</li>
+</ul>
+</li>
+<li>
+
+```java
+  @GetMapping("/new-article")
+    public String newArticle(@RequestParam(required = false) Long id, Model model){
+        if(id==null){
+            model.addAttribute("article", new ArticleViewResponse());
+        }else{
+            Article article = blogService.findById(id);
+            model.addAttribute("article", new ArticleViewResponse(article));
+        }
+        return "newArticle";
+    }
+```
+```html
+    <button th:if="${article.id} != null" type="button" class="btn btn-primary btn-sm">수정</button>
+    <button th:if="${article.id} == null" type="button" id="delete-btn" class="btn btn-secondary btn-sm">삭제</button>
+```
+이렇게 사용하면 하나의 메서드에 생성과 수정을 동시에 가능하게 할 수 있따.
+</li>
+</ul>
+</details>
+
 ## 유용한 페이지
 <ul>
 <li><a href = "https://www.diffchecker.com/">디프체커 </a>: 코드 서로 다른부분이 어떤건지 비교하기</li>
