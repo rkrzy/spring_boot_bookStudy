@@ -480,8 +480,36 @@ public void afterEach(){
     <button th:if="${article.id} != null" type="button" class="btn btn-primary btn-sm">수정</button>
     <button th:if="${article.id} == null" type="button" id="delete-btn" class="btn btn-secondary btn-sm">삭제</button>
 ```
-이렇게 사용하면 하나의 메서드에 생성과 수정을 동시에 가능하게 할 수 있따.
+이렇게 사용하면 하나의 메서드에 생성과 수정을 동시에 가능하게 할 수 있다.
 </li>
+</ul>
+</details>
+
+<details>
+<summary>8장 : 스프링 시큐리티로 로그인/ 로그아웃, 회원가입 구현하기</summary>
+<ul>
+<li>스프링 시큐리티 : 스프링 기반의 애플리케이션 보안(인증, 인가, 권한)을 담당하는 스프링 하위 프레임워크
+<ul>
+<li>인증 : 사용자의 신원을 입증하는 과정</li>
+<li>인가 : 사이트의 특저 부분에 접근할 수 있는지 권한을 확인하는 작업</li>
+</ul>
+<li>메서드 정리
+<ul>
+<li>requestMatchers() : 특정 요청과 일치하는 url에 대한 액세스를 설정합니다.</li>
+<li>permitAll() : 누구나 접근이 가능하게 설정합니다.</li>
+<li>anyRequest() : 위에서 설정한 url이외의 요청에 대해서 설정합니다.</li>
+<li>authenticated() : 별도의 인가는 필요하지 않지만 인증이 성공된 상태여야 접근할 수 있습니다.</li>
+<li>loginPage() : 로그인 페이지 경로를 설정한다.</li>
+<li>defaultSuccessUrl() : 로그인이 완료되었을 때 이동할 경로를 설정합니다.</li>
+<li>logoutSuccessUrl() : 고르아웃이 완료되었을 때 이동할 경로를 설정한다.</li>
+<li>invalidateHttpSession() : 로그아웃 이후에 세션을 천제 삭제할지 여부를 설정한다.</li>
+<li>userDetailsService() : 사용자 정보를 가져올 서비스를 설정한다. 이때 설정하는 서비스 클래스는 반드시 USerDetails Service를 상속받은 클래스만</li>
+<li>passwordEncoder() : 비밀번호를 암호화하기 위한 인코더를 설정</li>
+</ul>
+</li>
+
+<li>스프링 시큐리티에서 사용자 정보를 가져오는 데 사용하는 UserDetailService를 사용한다.</li>
+<li>스프링 시큐리티에서 사용자 인증, 인가 정보를 UserDetails 객체에 담는다.</li>
 </ul>
 </details>
 
